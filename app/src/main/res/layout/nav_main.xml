@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/nav_header_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_header_height"
+        android:focusable="true"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:id="@+id/btn_add_site"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@drawable/ic_add_white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_margin"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="@dimen/item_site_text_size"
+                android:text="添加站点" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_site_market"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@drawable/ic_shopping_basket_white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_margin"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="@dimen/item_site_text_size"
+                android:text="图源市场"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_site"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/item_site_group">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="@dimen/half_margin"
+        android:layout_marginLeft="@dimen/uni_padding"
+        android:layout_marginRight="@dimen/uni_padding"
+        android:layout_marginTop="@dimen/half_margin"
+        android:background="@color/gray_60" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/btn_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:mrl_rippleOverlay="true"
+            app:mrl_rippleColor="@color/black"
+            app:mrl_rippleAlpha="0.1"
+            app:mrl_rippleDimension="10dp"
+            app:mrl_rippleDuration="250"
+            app:mrl_rippleFadeDuration="75"
+            app:mrl_rippleHover="true"
+            app:mrl_rippleDelayClick="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/half_padding"
+                android:paddingLeft="@dimen/uni_padding"
+                android:paddingRight="@dimen/uni_padding"
+                android:paddingTop="@dimen/half_padding">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_settings_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="设置"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:mrl_rippleOverlay="true"
+            app:mrl_rippleColor="@color/black"
+            app:mrl_rippleAlpha="0.1"
+            app:mrl_rippleDimension="10dp"
+            app:mrl_rippleDuration="250"
+            app:mrl_rippleFadeDuration="75"
+            app:mrl_rippleHover="true"
+            app:mrl_rippleDelayClick="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_button"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/half_padding"
+                android:paddingLeft="@dimen/uni_padding"
+                android:paddingRight="@dimen/uni_padding"
+                android:paddingTop="@dimen/half_padding">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_exit_to_app_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="退出"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+    </LinearLayout>
+</LinearLayout>

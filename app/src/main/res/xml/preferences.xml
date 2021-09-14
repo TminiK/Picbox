@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <PreferenceCategory
+        android:key="pref_view_settings"
+        android:title="@string/settings_view">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_view_rememberLastSite"
+            android:title="@string/settings_view_rememberLastSite"
+            android:summary="@string/settings_view_rememberLastSite_summary" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_view_high_res"
+            android:title="@string/settings_view_high_res"
+            android:summary="@string/settings_view_high_res_summary"/>
+
+        <ml.puredark.hviewer.ui.preferences.NumberPickerPreference
+            android:defaultValue="2"
+            android:key="pref_view_preload_pages"
+            app:MaxValue="10"
+            app:MinValue="1"
+            android:summary=" %s 页"
+            android:title="@string/settings_view_preload_pages" />
+
+        <ListPreference
+            android:key="pref_view_direction"
+            android:title="@string/settings_view_direction"
+            android:summary="@string/settings_view_direction_summary"
+            android:entries="@array/settings_view_direction_option"
+            android:entryValues="@array/settings_view_direction_values"
+            android:dialogTitle="@string/settings_view_direction_dialog_title"
+            android:defaultValue="1"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_view_volume_flick"
+            android:title="@string/settings_view_volume_flick"
+            android:summary="@string/settings_view_volume_flick_summary"/>
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_view_one_pic_gallery"
+            android:title="@string/settings_view_open_one_pic_gallery"
+            android:summary="@string/settings_view_open_one_pic_gallery_summary"/>
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_view_one_hand"
+            android:title="@string/settings_view_one_hand"
+            android:summary="@string/settings_view_one_hand_summary"/>
+
+        <ListPreference
+            android:key="pref_view_video_player"
+            android:title="@string/settings_view_video_player"
+            android:summary="@string/settings_view_video_player_summary"
+            android:entries="@array/settings_view_video_player_option"
+            android:entryValues="@array/settings_view_video_player_values"
+            android:dialogTitle="@string/settings_view_video_player_dialog_title"
+            android:defaultValue="0"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_download_settings"
+        android:title="@string/settings_download">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_download_high_res"
+            android:title="@string/settings_download_high_res"
+            android:summary="@string/settings_download_high_res_summary"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_download_nomedia"
+            android:title="@string/settings_download_nomedia"
+            android:summary="@string/settings_download_nomedia_summary"/>
+
+        <ml.puredark.hviewer.ui.preferences.LongClickPreference
+            android:key="pref_download_path"
+            android:singleLine="true"
+            android:title="@string/settings_download_path"
+            android:summary="@string/settings_download_path_summary"/>
+
+        <Preference
+            android:key="pref_download_import"
+            android:singleLine="true"
+            android:title="@string/settings_download_import"
+            android:summary="@string/settings_download_import_summary"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_favourite_settings"
+        android:title="@string/settings_favourite">
+
+        <Preference
+            android:key="pref_favourite_export"
+            android:singleLine="true"
+            android:title="@string/settings_favourite_export"
+            android:summary="@string/settings_favourite_export_summary"/>
+
+        <Preference
+            android:key="pref_favourite_import"
+            android:singleLine="true"
+            android:title="@string/settings_favourite_import"
+            android:summary="@string/settings_favourite_import_summary"/>
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="pref_cache_settings"
+        android:title="@string/settings_cache">
+
+        <ml.puredark.hviewer.ui.preferences.NumberPickerPreference
+            android:defaultValue="300"
+            android:key="pref_cache_size"
+            app:MaxValue="600"
+            app:MinValue="0"
+            android:title="@string/settings_cache_size"
+            android:summary=" %s MB"/>
+
+        <Preference
+            android:key="pref_cache_clean"
+            android:singleLine="true"
+            android:title="@string/settings_cache_clean"
+            android:summary="@string/settings_cache_clean_summary"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_proxy"
+        android:title="@string/settings_proxy">
+
+        <Preference
+            android:key="pref_proxy_detail"
+            android:title="@string/settings_proxy_detail"
+            android:summary="@string/settings_proxy_detail_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_backupandrestore"
+        android:title="@string/settings_bk_rs">
+        <Preference
+            android:key="pref_backupandrestore_backup"
+            android:title="@string/settings_backup"
+            android:summary="@string/settings_backup_summary"/>
+        <Preference
+            android:key="pref_backupandrestore_restore"
+            android:title="@string/settings_restore"
+            android:summary="@string/settings_restore_summary"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_lock_methods"
+        android:title="@string/settings_lock_methods">
+
+        <ml.puredark.hviewer.ui.preferences.LockMethodPreference
+            android:key="pref_lock_methods_detail"
+            android:title="@string/settings_lock_methods_detail"
+            android:summary="@string/settings_lock_methods_detail_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_about"
+        android:title="@string/settings_about">
+
+        <Preference
+            android:key="pref_about_upgrade"
+            android:title="@string/settings_about_upgrade" />
+
+        <Preference
+            android:key="pref_about_license"
+            android:title="@string/settings_about_license" />
+        <Preference
+            android:key="pref_about_privacy"
+            android:title="@string/settings_about_privacy" />
+        <Preference
+            android:key="pref_about_h_viewer"
+            android:title="@string/settings_about_h_viewer" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
