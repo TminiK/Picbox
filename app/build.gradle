@@ -28,18 +28,14 @@ android {
         applicationId "com.timik.picbox"
         resValue "string", "app_name", "图箱"
         minSdkVersion 17
-        targetSdkVersion 25
-        versionCode 91
-        versionName "0.1.0"
+        targetSdkVersion 26
+        versionCode 94
+        versionName '1.0.3'
         flavorDimensions "channel"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         //multiDexEnabled true
 
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
     buildTypes {
         debug {
@@ -90,7 +86,7 @@ android {
         exclude 'lib/*/libRSSupport.so'
         exclude 'lib/*/librsjni.so'
     }
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '26.0.3'
 }
 
 andResGuard {
