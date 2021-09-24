@@ -62,6 +62,7 @@ public class DownloadManager {
             checkDownloadedTask();
             checkNoMediaFile();
         }).start();
+
     }
 
     public static File getAlbumStorageDir() {

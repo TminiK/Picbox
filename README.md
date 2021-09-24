@@ -2,6 +2,32 @@
 
 一个使用选择器和正则表达式来从网站获取数据的安卓图册阅览器
 
+An android feed reader application which fetch data with selector and regular expression.
+
+该应用仍处于测试阶段，Bugs 和崩溃都是不可避免的常有，如果你遇到了，请在本 Repo 的 issues 版块提交一则报告，方便我复现并修复
+
+Note that this app is still in alpha stage, and so bugs and crashes you may often run into. If that happens, please post an issue to address it, so I can fix it.
+
+## Usage
+
+1.Slide to open drawer
+
+2.Click + to add a site
+
+3.Click on the top-right corner
+
+4.Scan QR codes from [Site Index](https://github.com/H-Viewer-Sites/Index)
+
+### Only cellphone in hand
+
+1.Slide to open drawer
+
+2.Click + to add a site
+
+3.Click the icon left of the Qr scan icon
+
+4.Paste all content from [Site Index](https://github.com/H-Viewer-Sites/Index)
+
 ## 使用说明
 
 1.向右滑打开抽屉
