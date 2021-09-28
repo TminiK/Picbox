@@ -6,7 +6,7 @@ package ml.puredark.hviewer.configs;
 
 public class UrlConfig {
     //public final static String updateUrl = "https://api.github.com/repos/PureDark/H-Viewer/releases/latest";
-    public final static String updateUrl = "";
+    public final static String updateUrl = "https://api.github.com/repos/tminik/picbox/releases/latest";
     public final static String siteSourceUrl = "https://raw.githubusercontent.com/TminiK/Index/master/source.json";
     //public final static String bingApiUrl = "https://bing.ioliu.cn/v1/rand?type=json";
     public final static String bingApiUrl = "http://api.btstu.cn/sjbz/api.php?lx=m_meizi&format=json";
