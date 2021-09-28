@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.CollectionActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="-16dp"
+            android:paddingEnd="16dp"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"
+            android:fitsSystemWindows="true"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <ImageView
+                    android:id="@+id/btn_return"
+                    android:layout_width="48dp"
+                    android:layout_height="@dimen/tool_bar_height"
+                    android:background="@drawable/bg_button"
+                    android:padding="16dp"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/tool_bar_height"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textAppearance="@style/ActionBar.Title" />
+
+                <ImageView
+                    android:id="@+id/btn_clear_all"
+                    android:layout_width="@dimen/tool_bar_height"
+                    android:layout_height="@dimen/tool_bar_height"
+                    android:padding="14dp"
+                    android:background="@drawable/bg_button"
+                    app:srcCompat="@drawable/ic_clear_all_white"/>
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <include layout="@layout/view_collection_list" />
+
+        <View
+            android:id="@+id/shadowDown"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/shadow_bottom" />
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

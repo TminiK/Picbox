@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ml.puredark.hviewer">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <application
+        android:name=".HViewerApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:theme">
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="57ea5bcd67e58e5bdf0022af" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+
+        <activity
+            android:name=".ui.activities.LockActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+
+        <activity
+            android:name=".ui.activities.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.activities.CollectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.PictureViewerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="user" />
+        <activity
+            android:name=".ui.activities.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.SetPatternActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/ActionBarTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activities.SettingActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activities.SetPinActivity"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activities.SettingActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activities.AddSiteActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activities.MyCaptureActivity"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activities.ModifySiteActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activities.FavouriteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.HistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.DownloadActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".download.DownloadService">
+            <intent-filter>
+                <action android:name="ml.puredark.hviewer.services.DownloadService" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".ui.activities.DownloadTaskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.LicenseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.PrivacyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.LoginActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".ui.activities.MarketActivity" />
+
+        <activity android:name=".ui.activities.VideoViewerActivity"
+            android:hardwareAccelerated="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>
