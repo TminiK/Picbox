@@ -67,7 +67,7 @@
     <string name="settings_download_nomedia">相册中隐藏已下载图册</string>
     <string name="settings_download_nomedia_summary">在指定的下载目录中生成.nomedia文件</string>
     <string name="settings_download_path">更改保存位置</string>
-    <string name="settings_download_path_summary">/sdcard/Picbox/download</string>
+    <string name="settings_download_path_summary">/sdcard/H-Viewer/download</string>
     <string name="settings_download_import">导入已下载图册</string>
     <string name="settings_download_import_summary">将下载目录中已下载但未在下载管理中的图册导入</string>
 
@@ -97,9 +97,9 @@
     <string name="setting_about_author">作者</string>
     <string name="setting_about_author_summary">PureDark@鸡哥</string>
     <string name="setting_about_github">开源地址</string>
-    <string name="setting_about_github_summary">https://github.com/TminiK/Picbox</string>
+    <string name="setting_about_github_summary">https://github.com/PureDark/H-Viewer</string>
     <string name="setting_about_changelog">更新日志</string>
-    <string name="setting_about_changelog_summary">https://github.com/TminiK/Picbox/release</string>
+    <string name="setting_about_changelog_summary">https://github.com/PureDark/H-Viewer/releases</string>
     <string name="setting_about_version">版本号</string>
     <string name="setting_about_version_summary">v0.1.0</string>
     <string name="setting_about_qq_group">加入内测群</string>
