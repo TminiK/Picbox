@@ -102,6 +102,7 @@ public class UpdateManager {
         if (newVersion == null || "".equals(newVersion)) return false;
         String[] l1 = newVersion.split("\\.");
         String[] l2 = oldVersion.split("\\.");
+
         int len = Math.max(l1.length, l2.length);
         for (int i = 0; i < len; i++) {
             int n1 = (l1.length > i) ? Integer.parseInt(l1[i]) : 0;
