@@ -17,7 +17,7 @@ buildscript {
 
 ext {
     VERSION_DATE = new Date().format("yy-MM-dd", TimeZone.getTimeZone("UTC"))
-    BUILD_TOOLS = "26.0.2"
+    BUILD_TOOLS = "28.0.3"
 }
 
 android {
@@ -29,8 +29,8 @@ android {
         resValue "string", "app_name", "图箱"
         minSdkVersion 17
         targetSdkVersion 28
-        versionCode 97
-        versionName '1.0.6'
+        versionCode 99
+        versionName '1.0.7'
         flavorDimensions "channel"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -108,7 +108,7 @@ andResGuard {
             "*.gif"
     ]
     sevenzip {
-        artifact = 'com.tencent.mm:SevenZip:1.2.11'
+        artifact = 'com.tencent.mm:SevenZip:1.2.21'
     }
 }
 

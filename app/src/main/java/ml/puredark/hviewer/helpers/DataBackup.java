@@ -5,6 +5,7 @@ import android.support.v4.provider.DocumentFile;
 import android.support.v4.util.Pair;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.List;
 
@@ -44,7 +45,10 @@ public class DataBackup {
         } else {
             siteHolder = new SiteHolder(mContext);
             final List<Pair<SiteGroup, List<Site>>> siteGroups = siteHolder.getSites();
-            String json = new Gson().toJson(siteGroups);
+            //格式化输出json文件
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json = gson.toJson(siteGroups);
+            //String json = new Gson().toJson(siteGroups);
             FileHelper.writeString(json, file);
             siteHolder.onDestroy();
         }
@@ -57,7 +61,10 @@ public class DataBackup {
             return "收藏夹备份失败";
         } else {
             FavouriteHolder holder = new FavouriteHolder(mContext);
-            String json = new Gson().toJson(holder.getFavourites());
+            //格式化输出json文件
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json = gson.toJson(holder.getFavourites());
+            //String json = new Gson().toJson(holder.getFavourites());
             FileHelper.writeString(json, file);
             holder.onDestroy();
             return "收藏夹备份成功";
@@ -69,11 +76,12 @@ public class DataBackup {
         if (file == null) {
             return "设置备份失败";
         }
-
         SharedPreferences pref = mContext.getSharedPreferences(SharedPreferencesUtil.FILE_NAME, mContext.MODE_PRIVATE);
-        String json = new Gson().toJson(pref.getAll());
+        //格式化输出json文件
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(pref.getAll());
+        //String json = new Gson().toJson(pref.getAll());
         FileHelper.writeString(json, file);
-
         return "设置备份成功";
     }
 
