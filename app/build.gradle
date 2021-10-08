@@ -29,8 +29,8 @@ android {
         resValue "string", "app_name", "图箱"
         minSdkVersion 17
         targetSdkVersion 28
-        versionCode 99
-        versionName '1.0.7'
+        versionCode 100
+        versionName '1.0.8'
         flavorDimensions "channel"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
