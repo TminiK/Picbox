@@ -114,16 +114,20 @@ andResGuard {
 
 
 repositories {
+    mavenLocal()
+    mavenCentral()
     maven {
         url 'https://maven.aliyun.com/repository/public/'
     }
     maven {
         url 'https://maven.aliyun.com/repository/google/'
     }
-    mavenLocal()
-    mavenCentral()
-    maven { url "https://jitpack.io" }
-    maven { url 'http://guardian.github.io/maven/repo-releases' }
+    maven {
+        url "https://jitpack.io"
+    }
+    maven {
+        url 'http://guardian.github.io/maven/repo-releases'
+    }
 }
 
 dependencies {
