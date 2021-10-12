@@ -10,7 +10,7 @@
 
     <dimen name="status_bar_height">0dp</dimen>
 
-    <dimen name="nav_header_height">145dp</dimen>
+    <dimen name="nav_header_height">60dp</dimen>
     <dimen name="nav_header_height_plus_margin">168dp</dimen>
     <dimen name="nav_category_header_height">100dp</dimen>
     <dimen name="item_site_icon_size">32dp</dimen>
