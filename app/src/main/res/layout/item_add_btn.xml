@@ -40,7 +40,7 @@
             android:layout_marginBottom="@dimen/half_padding"
             android:layout_marginLeft="@dimen/half_margin"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             tools:text="E-hentai" />
     </LinearLayout>
 

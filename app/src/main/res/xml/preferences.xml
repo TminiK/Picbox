@@ -34,7 +34,7 @@
             android:entries="@array/settings_view_direction_option"
             android:entryValues="@array/settings_view_direction_values"
             android:dialogTitle="@string/settings_view_direction_dialog_title"
-            android:defaultValue="1"/>
+            android:defaultValue="0"/>
 
         <SwitchPreference
             android:defaultValue="true"

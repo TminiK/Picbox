@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="UA">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/92.0</string>
+    <string name="UA">Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36</string>
 
     <string name="navigation_drawer_open">打开站点抽屉</string>
     <string name="navigation_drawer_close">关闭站点抽屉</string>
@@ -67,7 +67,7 @@
     <string name="settings_download_nomedia">相册中隐藏已下载图册</string>
     <string name="settings_download_nomedia_summary">在指定的下载目录中生成.nomedia文件</string>
     <string name="settings_download_path">更改保存位置</string>
-    <string name="settings_download_path_summary">/sdcard/Picbox/download</string>
+    <string name="settings_download_path_summary">/sdcard/H-Viewer/download</string>
     <string name="settings_download_import">导入已下载图册</string>
     <string name="settings_download_import_summary">将下载目录中已下载但未在下载管理中的图册导入</string>
 
@@ -86,7 +86,7 @@
     <string name="settings_about_upgrade">检查更新</string>
     <string name="settings_about_license">开源协议</string>
     <string name="settings_about_privacy">隐私权政策</string>
-    <string name="settings_about_h_viewer">关于图箱</string>
+    <string name="settings_about_h_viewer">关于H-Viewer</string>
 
     <string name="settings_bk_rs">备份恢复</string>
     <string name="settings_backup">备份</string>
@@ -95,20 +95,17 @@
     <string name="settings_restore_summary">恢复站点,设置,收藏夹</string>
 
     <string name="setting_about_author">作者</string>
-    <string name="setting_about_author_summary">PureDark@鸡哥</string>
-    <string name="setting_about_github">开源地址</string>
-    <string name="setting_about_github_summary">https://github.com/TminiK/Picbox</string>
+    <string name="setting_about_author_summary">PureDark</string>
+    <string name="setting_about_github">Github主页</string>
+    <string name="setting_about_github_summary">https://github.com/PureDark/H-Viewer</string>
     <string name="setting_about_changelog">更新日志</string>
-    <string name="setting_about_changelog_summary">https://github.com/TminiK/Picbox/release</string>
+    <string name="setting_about_changelog_summary">https://github.com/PureDark/H-Viewer/releases</string>
     <string name="setting_about_version">版本号</string>
     <string name="setting_about_version_summary">v0.1.0</string>
     <string name="setting_about_qq_group">加入内测群</string>
-    <string name="setting_about_qq_group_summary">10261684</string>
-    <string name="setting_about_wechat">关注微信公众号</string>
-    <string name="setting_about_wechat_summary">爬虫鸡</string>
+    <string name="setting_about_qq_group_summary">590668841</string>
     <string name="setting_about_donate">捐赠-支付宝</string>
-    <string name="setting_about_donate_summary">zonb@qq.com</string>
-
+    <string name="setting_about_donate_summary">&lt;bruce.lee.liang@gmail.com&gt;</string>
 
     <string name="settings_lock_methods">应用解锁方式</string>
     <string name="settings_lock_methods_detail">设置解锁方式</string>

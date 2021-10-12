@@ -44,7 +44,7 @@ public class MarketSiteAdapter extends RecyclerView.Adapter<MarketSiteAdapter.Ma
     public void onBindViewHolder(final MarketSiteViewHolder holder, int position) {
         MarketSiteCategory.MarketSite marketSite = mProvider.getItem(position);
         if (!TextUtils.isEmpty(marketSite.icon))
-            ImageLoader.loadImageFromUrl(context,null, RegexValidateUtil.getHostFromUrl(marketSite.icon));
+            ImageLoader.loadImageFromUrl(context, holder.ivFavicon, marketSite.icon, null, RegexValidateUtil.getHostFromUrl(marketSite.icon));
         holder.tvTitle.setText(marketSite.title);
         if (TextUtils.isEmpty(marketSite.description)) {
             holder.tvDescription.setText("@" + marketSite.author);
@@ -94,8 +94,8 @@ public class MarketSiteAdapter extends RecyclerView.Adapter<MarketSiteAdapter.Ma
     }
 
     public class MarketSiteViewHolder extends RecyclerView.ViewHolder {
-//        @BindView(R.id.iv_favicon)
-//        public SimpleDraweeView ivFavicon;
+        @BindView(R.id.iv_favicon)
+        public SimpleDraweeView ivFavicon;
         @BindView(R.id.tv_title)
         public TextView tvTitle;
         @BindView(R.id.tv_description)

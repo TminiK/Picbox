@@ -144,10 +144,9 @@
                 android:text="复制规则" />
         </LinearLayout>
 
-        <include
-            android:id="@+id/view_site_details"
-            layout="@layout/view_site_details"
-            android:visibility="visible" />
+        <include layout="@layout/view_site_details"
+            android:visibility="visible"
+            android:id="@+id/view_site_details"/>
 
     </RelativeLayout>
 

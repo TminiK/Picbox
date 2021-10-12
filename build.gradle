@@ -10,6 +10,9 @@ buildscript {
         }
         mavenLocal()
         mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url 'http://guardian.github.io/maven/repo-releases' }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
@@ -25,12 +28,7 @@ repositories {
 }
 allprojects {
     repositories {
-        maven {
-            url 'https://maven.aliyun.com/repository/public/'
-        }
-        maven {
-            url 'https://maven.aliyun.com/repository/google/'
-        }
+        jcenter()
     }
 }
 

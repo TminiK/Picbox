@@ -10,14 +10,14 @@
     <me.relex.photodraweeview.PhotoDraweeView
         android:id="@+id/iv_picture"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/item_picture_viewer_height"
-        android:layout_marginBottom="@dimen/no_margin" />
+        android:layout_height="@dimen/item_picture_viewer_height" />
+
     <com.gc.materialdesign.views.ProgressBarCircularIndeterminate
         android:id="@+id/progress_bar"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_centerInParent="true"
-        android:background="@color/white_80"/>
+        android:background="@color/white_80" />
     <ImageView
         android:id="@+id/btn_refresh"
         android:layout_width="60dp"

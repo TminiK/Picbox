@@ -76,6 +76,7 @@ public class DataBackup {
         if (file == null) {
             return "设置备份失败";
         }
+
         SharedPreferences pref = mContext.getSharedPreferences(SharedPreferencesUtil.FILE_NAME, mContext.MODE_PRIVATE);
         //格式化输出json文件
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

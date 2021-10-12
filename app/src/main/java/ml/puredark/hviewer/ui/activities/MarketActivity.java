@@ -193,8 +193,8 @@ public class MarketActivity extends BaseActivity {
     public void getSourceList(int selected) {
         final MarketSourceHolder marketSourceHolder = new MarketSourceHolder(this);
         final List<MarketSource> sources = marketSourceHolder.getMarketSources();
-        sources.add(0, new MarketSource(0, "" + "图源市场", UrlConfig.siteSourceUrl));
-        sources.add(new MarketSource(-1, "订阅图源", ""));
+        sources.add(0, new MarketSource(0, "官方市场", UrlConfig.siteSourceUrl));
+        sources.add(new MarketSource(-1, "添加来源", ""));
 
         String[] names = new String[sources.size()];
         for (int i = 0; i < sources.size(); i++) {
