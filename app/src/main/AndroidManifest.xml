@@ -23,7 +23,7 @@
         tools:replace="android:theme">
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="57ea5bcd67e58e5bdf0022af" />
+            android:value="614192ae314602341a13f1c4" />
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="${UMENG_CHANNEL_VALUE}" />

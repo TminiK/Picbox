@@ -22,11 +22,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //http
-    compile 'com.squareup.okhttp3:okhttp:3.4.1'
-    testCompile 'junit:junit:4.12'
+    api 'com.squareup.okhttp3:okhttp:3.4.1'
+    testImplementation 'junit:junit:4.12'
 }

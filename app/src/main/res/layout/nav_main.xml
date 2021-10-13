@@ -60,7 +60,7 @@
                 android:layout_marginLeft="@dimen/half_margin"
                 android:textColor="@color/white"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:text="站点市场"/>
+                android:text="图源市场"/>
         </LinearLayout>
     </RelativeLayout>
 
