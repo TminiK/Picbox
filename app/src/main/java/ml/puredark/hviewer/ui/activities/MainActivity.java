@@ -353,7 +353,7 @@ public class MainActivity extends BaseActivity {
                     JsonObject jsonObject = new JsonParser().parse(text).getAsJsonObject();
 //                    String url = "http://www.bing.com";
 //                    url += jsonObject.get("images").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
-                    String url = jsonObject.get("data").getAsJsonObject().get("original_pic").getAsString();
+                    String url = jsonObject.getAsJsonObject().get("imgurl").getAsString();
                     Uri uri = Uri.parse(url);
                     headerImageUri = uri;
                     //Fresco.getImagePipeline().evictFromMemoryCache(uri);

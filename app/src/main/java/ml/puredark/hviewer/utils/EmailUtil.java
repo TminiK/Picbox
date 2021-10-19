@@ -15,11 +15,11 @@ public class EmailUtil {
 
     public final static String smtpHost = "smtp.qq.com";
 
-    public final static String fromEmail = "PureDark@qq.com";
+    public final static String fromEmail = "zonb@qq.com";
 
-    public final static String username = "PureDark";
+    public final static String username = "zonb";
 
-    public final static String password = "fgtddvptuwdbbiaf";
+    public final static String password = "Lm20061002!";
 
     public static void sendEmail(String to, String title, String content) {
         try {
