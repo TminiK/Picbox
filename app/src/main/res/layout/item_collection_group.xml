@@ -44,7 +44,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/item_site_text_size"
             tools:text="未分类" />
-        <ml.puredark.hviewer.libraries.advrecyclerview.common.widget.ExpandableItemIndicator
+        <ml.timik.picbox.libraries.advrecyclerview.common.widget.ExpandableItemIndicator
             android:id="@+id/indicator"
             android:layout_width="24dp"
             android:layout_height="24dp"

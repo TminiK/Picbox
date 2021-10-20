@@ -19,7 +19,7 @@
             android:title="@string/settings_view_high_res"
             android:summary="@string/settings_view_high_res_summary"/>
 
-        <ml.puredark.hviewer.ui.preferences.NumberPickerPreference
+        <ml.timik.picbox.ui.preferences.NumberPickerPreference
             android:defaultValue="2"
             android:key="pref_view_preload_pages"
             app:MaxValue="10"
@@ -81,7 +81,7 @@
             android:title="@string/settings_download_nomedia"
             android:summary="@string/settings_download_nomedia_summary"/>
 
-        <ml.puredark.hviewer.ui.preferences.LongClickPreference
+        <ml.timik.picbox.ui.preferences.LongClickPreference
             android:key="pref_download_path"
             android:singleLine="true"
             android:title="@string/settings_download_path"
@@ -118,7 +118,7 @@
         android:key="pref_cache_settings"
         android:title="@string/settings_cache">
 
-        <ml.puredark.hviewer.ui.preferences.NumberPickerPreference
+        <ml.timik.picbox.ui.preferences.NumberPickerPreference
             android:defaultValue="300"
             android:key="pref_cache_size"
             app:MaxValue="600"
@@ -161,7 +161,7 @@
         android:key="pref_lock_methods"
         android:title="@string/settings_lock_methods">
 
-        <ml.puredark.hviewer.ui.preferences.LockMethodPreference
+        <ml.timik.picbox.ui.preferences.LockMethodPreference
             android:key="pref_lock_methods_detail"
             android:title="@string/settings_lock_methods_detail"
             android:summary="@string/settings_lock_methods_detail_summary" />

@@ -7,14 +7,14 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <ml.puredark.hviewer.ui.customs.ExViewPager
+    <ml.timik.picbox.ui.customs.ExViewPager
         android:id="@+id/bottom_sheet_view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         app:pagerCurrItem="0"
         app:pagerLayout1="@layout/view_tag_list" />
-    <ml.puredark.hviewer.ui.customs.ExPagerBottomTabLayout
+    <ml.timik.picbox.ui.customs.ExPagerBottomTabLayout
         android:id="@+id/pager_bottom_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

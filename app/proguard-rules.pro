@@ -48,8 +48,8 @@
 -keep class sun.misc.Unsafe { *; }
 -dontwarn sun.misc.Unsafe
 
--keep class ml.puredark.hviewer.** { *; }
--dontwarn ml.puredark.hviewer.**
+-keep class ml.timik.picbox.** { *; }
+-dontwarn ml.timik.picbox.**
 
 -keep class com.umeng.** {*; }
 -dontwarn com.umeng.**
@@ -97,6 +97,7 @@
 -keep class * implements com.google.gson.TypeAdapterFactory
 -keep class * implements com.google.gson.JsonSerializer
 -keep class * implements com.google.gson.JsonDeserializer
+-keep class * implements com.google.gson.GsonBuilder
 
 -keep public class org.jsoup.** {
     public *;

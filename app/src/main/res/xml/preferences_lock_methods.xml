@@ -3,12 +3,12 @@
 
     <PreferenceCategory android:title="@string/settings_lock_methods">
 
-        <ml.puredark.hviewer.ui.preferences.SetPatternLockPreference
+        <ml.timik.picbox.ui.preferences.SetPatternLockPreference
             android:key="pref_pattern_lock"
             android:persistent="false"
             android:title="@string/setting_title_set_pattern" />
 
-        <ml.puredark.hviewer.ui.preferences.SetPinLockPreference
+        <ml.timik.picbox.ui.preferences.SetPinLockPreference
             android:key="pref_pin_lock"
             android:persistent="false"
             android:title="@string/setting_title_set_pin" />

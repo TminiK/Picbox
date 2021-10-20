@@ -15,7 +15,7 @@
         android:background="@color/black_90"
         android:fitsSystemWindows="false">
 
-        <ml.puredark.hviewer.ui.customs.MultiTouchViewPager
+        <ml.timik.picbox.ui.customs.MultiTouchViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
