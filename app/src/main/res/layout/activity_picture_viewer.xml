@@ -12,15 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/black_90"
+        android:background="@color/black_40"
         android:fitsSystemWindows="false">
 
         <ml.timik.picbox.ui.customs.MultiTouchViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:visibility="visible"
-            android:fitsSystemWindows="false" />
+            android:fitsSystemWindows="false"
+            tools:visibility="visible" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_picture"

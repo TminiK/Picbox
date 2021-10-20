@@ -23,8 +23,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:mrl_rippleOverlay="true"
-        app:mrl_rippleColor="@color/black"
-        app:mrl_rippleAlpha="0.1"
+
         app:mrl_rippleDimension="10dp"
         app:mrl_rippleDuration="250"
         app:mrl_rippleFadeDuration="75"
@@ -53,7 +52,7 @@
                     android:id="@+id/iv_icon"
                     android:layout_width="match_parent"
                     android:layout_height="215dp"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/thumbColor"
                     android:padding="30dp"
                     app:srcCompat="@drawable/ic_gallery_white" />
 

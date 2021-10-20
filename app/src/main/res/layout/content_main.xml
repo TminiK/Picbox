@@ -21,14 +21,13 @@
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimaryDark"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            app:contentScrim="@color/colorPrimaryDark"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/backdrop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:alpha="0.8"
                 android:background="@color/colorPrimaryDark"
                 android:fitsSystemWindows="true"
                 app:layout_collapseMode="parallax"
@@ -56,7 +55,8 @@
         android:layout_height="match_parent"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:ignore="SpeakableTextPresentCheck">
 
         <RelativeLayout
             android:id="@+id/fragment_container"
@@ -75,11 +75,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/selector_search"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:borderWidth="0dp"
         app:fabSize="normal"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:rippleColor="@color/white_50" />
+        app:rippleColor="@color/white_50"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <com.miguelcatalan.materialsearchview.MaterialSearchView
         android:id="@+id/search_view"

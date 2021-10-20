@@ -33,7 +33,7 @@
                     android:id="@+id/iv_icon"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/colorPrimaryDark"
                     android:padding="30dp"
                     app:srcCompat="@drawable/ic_gallery_white" />
 

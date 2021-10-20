@@ -115,13 +115,14 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/colorPrimaryDark"
                     android:text="分析规则" />
             </LinearLayout>
 
-            <include layout="@layout/view_site_details"
-                android:visibility="visible"
-                android:id="@+id/view_site_details"/>
+            <include
+                android:id="@+id/view_site_details"
+                layout="@layout/view_site_details"
+                android:visibility="visible" />
 
         </RelativeLayout>
     </LinearLayout>

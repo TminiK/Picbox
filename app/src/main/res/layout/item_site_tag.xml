@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:mrl_rippleOverlay="false"
-        app:mrl_rippleColor="@color/colorPrimary"
+        app:mrl_rippleColor="@color/colorPrimaryDark"
         app:mrl_rippleBackground="@color/dimgray"
         app:mrl_rippleAlpha="1"
         app:mrl_rippleDimension="10dp"
