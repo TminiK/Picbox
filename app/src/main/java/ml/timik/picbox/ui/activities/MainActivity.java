@@ -198,10 +198,10 @@ public class MainActivity extends BaseActivity {
         setDrawerLayout(drawer);
 
         // 关闭默认统计，手动进行Fragment统计
-        setAnalyze(false);
+        setAnalyze(true);
 
         // 关闭边缘滑动返回
-        setSwipeBackEnable(false);
+        setSwipeBackEnable(true);
 
         // 开启按两次返回退出
         setDoubleBackExitEnabled(true);
@@ -334,7 +334,6 @@ public class MainActivity extends BaseActivity {
                         }
                     }
                 });
-
         boolean hasCustomHeader = (boolean) SharedPreferencesUtil.getData(mContext, SettingFragment.KEY_CUSTOM_HEADER_IMAGE, false);
         if (!hasCustomHeader || "drawable://backdrop".equals(currHeaderUrl)) {
             getBingImage();
@@ -352,7 +351,7 @@ public class MainActivity extends BaseActivity {
                     JsonObject jsonObject = new JsonParser().parse(text).getAsJsonObject();
 //                    String url = "http://www.bing.com";
 //                    url += jsonObject.get("images").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
-                    String url = jsonObject.getAsJsonObject().get("imgurl").getAsString();
+                    String url = jsonObject.getAsJsonObject().get("url").getAsString();
                     Uri uri = Uri.parse(url);
                     headerImageUri = uri;
                     //Fresco.getImagePipeline().evictFromMemoryCache(uri);

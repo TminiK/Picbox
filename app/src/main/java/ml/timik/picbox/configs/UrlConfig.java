@@ -9,7 +9,8 @@ public class UrlConfig {
     public final static String updateUrl = "https://api.github.com/repos/tminik/picbox/releases/latest";
     public final static String siteSourceUrl = "https://raw.githubusercontent.com/TminiK/Index/master/source.json";
     //public final static String bingApiUrl = "https://bing.ioliu.cn/v1/rand?type=json";
-    public final static String bingApiUrl = "http://api.btstu.cn/sjbz/api.php?lx=m_meizi&format=json";
+    //public final static String bingApiUrl = "http://api.btstu.cn/sjbz/api.php?lx=m_meizi&format=json";
+    public final static String bingApiUrl = "https://3650000.xyz/api/?type=json&mode=8";
     //    public final static String libijkffmpegUrl = "https://raw.githubusercontent.com/PureDark/GSYVideoPlayer/master/gsyVideoPlayer/libs/<ABIS>/libijkffmpeg.so";
 //    public final static String libijkplayerUrl = "https://raw.githubusercontent.com/PureDark/GSYVideoPlayer/master/gsyVideoPlayer/libs/<ABIS>/libijkplayer.so";
 //    public final static String libijksdlUrl = "https://raw.githubusercontent.com/PureDark/GSYVideoPlayer/master/gsyVideoPlayer/libs/<ABIS>/libijksdl.so";
