@@ -11,7 +11,7 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.ui.activities.BaseActivity;
 import ml.timik.picbox.utils.SharedPreferencesUtil;
@@ -48,7 +48,7 @@ public class AboutFragment extends PreferenceFragment {
         getPreferenceManager().setSharedPreferencesName(SharedPreferencesUtil.FILE_NAME);
         addPreferencesFromResource(R.xml.about);
         Preference preference = getPreferenceScreen().findPreference(KEY_PREF_ABOUT_VERSION);
-        preference.setSummary(HViewerApplication.getVersionName());
+        preference.setSummary(picboxApplication.getVersionName());
     }
 
     @Override
@@ -56,7 +56,7 @@ public class AboutFragment extends PreferenceFragment {
         if (preference.getKey().equals(KEY_PREF_ABOUT_AUTHOR)) {
             String message = "";
 
-            boolean r18enabled = (boolean) SharedPreferencesUtil.getData(HViewerApplication.mContext, KEY_PREF_MODE_R18_ENABLED, false);
+            boolean r18enabled = (boolean) SharedPreferencesUtil.getData(picboxApplication.mContext, KEY_PREF_MODE_R18_ENABLED, false);
             if (r18enabled) {
                 message = "已开启R18模式！无法关闭！哈哈哈后悔吧！";
             } else {
@@ -81,7 +81,7 @@ public class AboutFragment extends PreferenceFragment {
                         break;
                     case 6:
                         message = "已开启R18模式";
-                        SharedPreferencesUtil.saveData(HViewerApplication.mContext, KEY_PREF_MODE_R18_ENABLED, true);
+                        SharedPreferencesUtil.saveData(picboxApplication.mContext, KEY_PREF_MODE_R18_ENABLED, true);
                         break;
                 }
             }

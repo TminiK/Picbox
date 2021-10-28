@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.WeakHashMap;
 import java.util.concurrent.Executor;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import okhttp3.CacheControl;
 import okhttp3.Call;
@@ -80,7 +80,7 @@ public class MyOkHttpNetworkFetcher extends
         }
         final Request request = builder
                 .cacheControl(new CacheControl.Builder().noStore().build())
-                .header("User-Agent", HViewerApplication.mContext.getResources().getString(R.string.UA))
+                .header("User-Agent", picboxApplication.mContext.getResources().getString(R.string.UA))
                 .url(uri.toString())
                 .get()
                 .build();

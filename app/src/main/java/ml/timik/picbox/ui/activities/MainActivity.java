@@ -79,7 +79,7 @@ import me.majiajie.pagerbottomtabstrip.PagerBottomTabLayout;
 import me.majiajie.pagerbottomtabstrip.TabItemBuilder;
 import me.majiajie.pagerbottomtabstrip.TabStripBuild;
 import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectListener;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.Category;
 import ml.timik.picbox.beans.Site;
@@ -114,9 +114,9 @@ import ml.timik.picbox.utils.DocumentUtil;
 import ml.timik.picbox.utils.RegexValidateUtil;
 import ml.timik.picbox.utils.SharedPreferencesUtil;
 
-import static ml.timik.picbox.HViewerApplication.mContext;
-import static ml.timik.picbox.HViewerApplication.searchHistoryHolder;
-import static ml.timik.picbox.HViewerApplication.temp;
+import static ml.timik.picbox.picboxApplication.mContext;
+import static ml.timik.picbox.picboxApplication.searchHistoryHolder;
+import static ml.timik.picbox.picboxApplication.temp;
 import static ml.timik.picbox.ui.fragments.SettingFragment.KEY_CUSTOM_HEADER_IMAGE;
 import static ml.timik.picbox.ui.fragments.SettingFragment.KEY_FIRST_TIME;
 import static ml.timik.picbox.ui.fragments.SettingFragment.KEY_PREF_DOWNLOAD_PATH;
@@ -214,7 +214,7 @@ public class MainActivity extends BaseActivity {
             }, 1);
         }
 
-        if (HViewerApplication.DEBUG)
+        if (picboxApplication.DEBUG)
             toolbar.setOnLongClickListener(v -> {
                 if (currFragment != null && currFragment.getCurrSite() != null
                         && (currFragment.getCurrSite().hasFlag(Site.FLAG_JS_NEEDED_ALL)
@@ -351,7 +351,7 @@ public class MainActivity extends BaseActivity {
                     JsonObject jsonObject = new JsonParser().parse(text).getAsJsonObject();
 //                    String url = "http://www.bing.com";
 //                    url += jsonObject.get("images").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
-                    String url = jsonObject.getAsJsonObject().get("url").getAsString();
+                    String url = jsonObject.getAsJsonObject().get("imgurl").getAsString();
                     Uri uri = Uri.parse(url);
                     headerImageUri = uri;
                     //Fresco.getImagePipeline().evictFromMemoryCache(uri);
@@ -667,8 +667,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initSearchSuggestions() {
-        List<String> histories = HViewerApplication.searchHistoryHolder.getSearchHistory();
-        List<String> suggestions = HViewerApplication.searchSuggestionHolder.getSearchSuggestion();
+        List<String> histories = picboxApplication.searchHistoryHolder.getSearchHistory();
+        List<String> suggestions = picboxApplication.searchSuggestionHolder.getSearchSuggestion();
         List<String> mySuggestions = new ArrayList<>();
         mySuggestions.addAll(histories);
         mySuggestions.addAll(suggestions);
@@ -760,7 +760,7 @@ public class MainActivity extends BaseActivity {
                 currQuery = keyword;
                 if (!"".equals(keyword) && currFragment != null) {
                     currFragment.onSearch(keyword);
-                    HViewerApplication.searchHistoryHolder.addSearchHistory(keyword);
+                    picboxApplication.searchHistoryHolder.addSearchHistory(keyword);
                     ListDataProvider provider = historyTagAdapter.getDataProvider();
                     provider.addItem(new Tag(provider.getCount() + 1, keyword));
                     historyTagAdapter.notifyDataSetChanged();
@@ -1084,8 +1084,8 @@ public class MainActivity extends BaseActivity {
                     currFragment.onSearch(tag.title);
             } else
                 currFragment.onSearch(tag.title);
-            HViewerApplication.searchHistoryHolder.addSearchHistory(tag.title);
-            historyTagAdapter.setDataProvider(new ListDataProvider(HViewerApplication.searchHistoryHolder.getSearchHistoryAsTag()));
+            picboxApplication.searchHistoryHolder.addSearchHistory(tag.title);
+            historyTagAdapter.setDataProvider(new ListDataProvider(picboxApplication.searchHistoryHolder.getSearchHistoryAsTag()));
             historyTagAdapter.notifyDataSetChanged();
             search(tag.title, false);
             new Handler().postDelayed(() -> searchView.dismissSuggestions(), 200);
@@ -1187,8 +1187,8 @@ public class MainActivity extends BaseActivity {
             siteTagHolder.onDestroy();
         if (favorTagHolder != null)
             favorTagHolder.onDestroy();
-        HViewerApplication.searchHistoryHolder.saveSearchHistory();
-        HViewerApplication.searchSuggestionHolder.saveSearchSuggestion();
+        picboxApplication.searchHistoryHolder.saveSearchHistory();
+        picboxApplication.searchSuggestionHolder.saveSearchSuggestion();
 
         if (mRecyclerViewDragDropManager != null) {
             downloadManager.setAllPaused();
@@ -1291,8 +1291,8 @@ public class MainActivity extends BaseActivity {
                         currFragment.onSearch(tag.title);
                 } else
                     currFragment.onSearch(tag.title);
-                HViewerApplication.searchHistoryHolder.addSearchHistory(tag.title);
-                historyTagAdapter.setDataProvider(new ListDataProvider(HViewerApplication.searchHistoryHolder.getSearchHistoryAsTag()));
+                picboxApplication.searchHistoryHolder.addSearchHistory(tag.title);
+                historyTagAdapter.setDataProvider(new ListDataProvider(picboxApplication.searchHistoryHolder.getSearchHistoryAsTag()));
                 historyTagAdapter.notifyDataSetChanged();
                 search(tag.title, false);
                 new Handler().postDelayed(() -> searchView.dismissSuggestions(), 200);
@@ -1300,12 +1300,12 @@ public class MainActivity extends BaseActivity {
                 String keyword = "";
                 for (Tag tag : selectedTags) {
                     keyword += tag.title + " ";
-                    HViewerApplication.searchHistoryHolder.addSearchHistory(tag.title);
+                    picboxApplication.searchHistoryHolder.addSearchHistory(tag.title);
                 }
                 historyTagAdapter.notifyDataSetChanged();
                 keyword = keyword.trim();
                 currFragment.onSearch(keyword);
-                historyTagAdapter.getDataProvider().setDataSet(HViewerApplication.searchHistoryHolder.getSearchHistoryAsTag());
+                historyTagAdapter.getDataProvider().setDataSet(picboxApplication.searchHistoryHolder.getSearchHistoryAsTag());
                 historyTagAdapter.notifyDataSetChanged();
                 search(keyword, true);
                 new Handler().postDelayed(() -> searchView.dismissSuggestions(), 200);

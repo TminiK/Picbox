@@ -34,7 +34,7 @@ import ml.timik.picbox.ui.customs.RetainingDataSourceSupplier;
 import ml.timik.picbox.utils.DensityUtil;
 import ml.timik.picbox.utils.MyThumbnailUtils;
 
-import static ml.timik.picbox.HViewerApplication.getGson;
+import static ml.timik.picbox.picboxApplication.getGson;
 
 /**
  * Created by PureDark on 2016/9/2.

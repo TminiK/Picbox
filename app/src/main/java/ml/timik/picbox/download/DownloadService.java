@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.DownloadTask;
 import ml.timik.picbox.beans.Picture;
@@ -53,7 +53,7 @@ import okhttp3.MediaType;
 import okhttp3.Response;
 
 import static android.webkit.WebSettings.LOAD_CACHE_ELSE_NETWORK;
-import static ml.timik.picbox.HViewerApplication.mContext;
+import static ml.timik.picbox.picboxApplication.mContext;
 import static ml.timik.picbox.beans.DownloadItemStatus.STATUS_DOWNLOADED;
 import static ml.timik.picbox.beans.DownloadItemStatus.STATUS_DOWNLOADING;
 import static ml.timik.picbox.beans.DownloadItemStatus.STATUS_WAITING;
@@ -207,7 +207,7 @@ public class DownloadService extends Service {
                 String rootPath = task.path.substring(0, task.path.lastIndexOf("/"));
                 String dirName = task.path.substring(task.path.lastIndexOf("/") + 1, task.path.length());
                 FileHelper.createFileIfNotExist("detail.txt", rootPath, dirName);
-                FileHelper.writeString(HViewerApplication.getGson().toJson(task), "detail.txt", rootPath, dirName);
+                FileHelper.writeString(picboxApplication.getGson().toJson(task), "detail.txt", rootPath, dirName);
             }
             return;
         }
@@ -431,7 +431,7 @@ public class DownloadService extends Service {
                 String rootPath = task.path.substring(0, task.path.lastIndexOf("/"));
                 String dirName = task.path.substring(task.path.lastIndexOf("/") + 1, task.path.length());
                 FileHelper.createFileIfNotExist("detail.txt", rootPath, dirName);
-                FileHelper.writeString(HViewerApplication.getGson().toJson(task), "detail.txt", rootPath, dirName);
+                FileHelper.writeString(picboxApplication.getGson().toJson(task), "detail.txt", rootPath, dirName);
             }
             return;
         }

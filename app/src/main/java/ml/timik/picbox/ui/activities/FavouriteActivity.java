@@ -27,7 +27,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.CollectionGroup;
 import ml.timik.picbox.beans.LocalCollection;
@@ -82,9 +82,9 @@ public class FavouriteActivity extends BaseActivity {
             Logger.d("ShortcutTest", "FavouriteActivity");
             Logger.d("ShortcutTest", intent.toString());
             String action = intent.getAction();
-            if(HViewerApplication.INTENT_SHORTCUT.equals(action) && LockActivity.isSetLockMethod(this)){
+            if(picboxApplication.INTENT_SHORTCUT.equals(action) && LockActivity.isSetLockMethod(this)){
                 Intent lockIntent = new Intent(FavouriteActivity.this, LockActivity.class);
-                lockIntent.setAction(HViewerApplication.INTENT_FROM_FAVOURITE);
+                lockIntent.setAction(picboxApplication.INTENT_FROM_FAVOURITE);
                 startActivity(lockIntent);
                 finish();
                 return;
@@ -217,8 +217,8 @@ public class FavouriteActivity extends BaseActivity {
             public void onItemClick(View v, int groupPosition, int childPosition) {
                 try {
                     LocalCollection collection = adapter.getDataProvider().getChildItem(groupPosition, childPosition);
-                    HViewerApplication.temp = collection.site;
-                    HViewerApplication.temp2 = collection;
+                    picboxApplication.temp = collection.site;
+                    picboxApplication.temp2 = collection;
                     Intent intent = new Intent(FavouriteActivity.this, CollectionActivity.class);
                     startActivity(intent);
                 } catch (IndexOutOfBoundsException e) {

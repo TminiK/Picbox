@@ -32,7 +32,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.CollectionGroup;
 import ml.timik.picbox.beans.DownloadTask;
@@ -105,9 +105,9 @@ public class DownloadActivity extends BaseActivity {
             Logger.d("ShortcutTest", "DownloadActivity");
             Logger.d("ShortcutTest", intent.toString());
             String action = intent.getAction();
-            if (HViewerApplication.INTENT_SHORTCUT.equals(action) && LockActivity.isSetLockMethod(this)) {
+            if (picboxApplication.INTENT_SHORTCUT.equals(action) && LockActivity.isSetLockMethod(this)) {
                 Intent lockIntent = new Intent(DownloadActivity.this, LockActivity.class);
-                lockIntent.setAction(HViewerApplication.INTENT_FROM_DOWNLOAD);
+                lockIntent.setAction(picboxApplication.INTENT_FROM_DOWNLOAD);
                 startActivity(lockIntent);
                 finish();
                 return;
@@ -196,7 +196,7 @@ public class DownloadActivity extends BaseActivity {
                                 if (task.collection.videos != null && task.collection.videos.size() > 0) {
                                     manager.restartDownload(task);
                                 } else {
-                                    HViewerApplication.temp = task;
+                                    picboxApplication.temp = task;
                                     Intent intent = new Intent(DownloadActivity.this, DownloadTaskActivity.class);
                                     startActivity(intent);
                                 }
@@ -345,7 +345,7 @@ public class DownloadActivity extends BaseActivity {
                 try {
                     ExpandableDataProvider<CollectionGroup, DownloadTask> provider = downloadedTaskAdapter.getDataProvider();
                     DownloadTask task = provider.getChildItem(groupPosition, childPosition);
-                    HViewerApplication.temp = task;
+                    picboxApplication.temp = task;
                     Intent intent = new Intent(DownloadActivity.this, DownloadTaskActivity.class);
                     startActivity(intent);
                 } catch (IndexOutOfBoundsException e) {

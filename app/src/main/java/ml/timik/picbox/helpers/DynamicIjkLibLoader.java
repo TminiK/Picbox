@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import tv.danmaku.ijk.media.player.IjkLibLoader;
 
 /**
@@ -32,7 +32,7 @@ public class DynamicIjkLibLoader implements IjkLibLoader {
     }
 
     public static File getLibDir() {
-        return HViewerApplication.mContext.getDir("lib", Context.MODE_PRIVATE);
+        return picboxApplication.mContext.getDir("lib", Context.MODE_PRIVATE);
     }
 
     public static boolean isLibrariesDownloaded() {

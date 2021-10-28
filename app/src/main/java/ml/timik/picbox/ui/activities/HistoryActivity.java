@@ -17,7 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.Collection;
 import ml.timik.picbox.beans.LocalCollection;
@@ -70,8 +70,8 @@ public class HistoryActivity extends BaseActivity {
                 Collection collection = (Collection) adapter.getDataProvider().getItem(position);
                 if (collection instanceof LocalCollection) {
                     LocalCollection col = (LocalCollection) collection;
-                    HViewerApplication.temp = col.site;
-                    HViewerApplication.temp2 = collection;
+                    picboxApplication.temp = col.site;
+                    picboxApplication.temp2 = collection;
                     Intent intent = new Intent(HistoryActivity.this, CollectionActivity.class);
                     startActivity(intent);
                 } else {

@@ -28,7 +28,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.Collection;
 import ml.timik.picbox.beans.Rule;
@@ -185,8 +185,8 @@ public class CollectionFragment extends MyFragment {
             @Override
             public void onItemClick(View v, int position) {
                 Collection collection = (Collection) adapter.getDataProvider().getItem(position);
-                HViewerApplication.temp = site;
-                HViewerApplication.temp2 = collection;
+                picboxApplication.temp = site;
+                picboxApplication.temp2 = collection;
                 Intent intent = new Intent(CollectionFragment.this.getContext(), CollectionActivity.class);
                 startActivity(intent);
                 clickPos = position;
@@ -297,7 +297,7 @@ public class CollectionFragment extends MyFragment {
         }
         noTouch = true;
         new Thread(() -> {
-            if (HViewerApplication.DEBUG)
+            if (picboxApplication.DEBUG)
                 FileHelper.writeString(html, "html.txt", DownloadManager.getDownloadPath());
             final Rule rule;
 
@@ -354,7 +354,7 @@ public class CollectionFragment extends MyFragment {
             Collection collection = collections.get(i);
             if (collection.tags != null) {
                 for (Tag tag : collection.tags) {
-                    HViewerApplication.searchSuggestionHolder.addSearchSuggestion(tag.title);
+                    picboxApplication.searchSuggestionHolder.addSearchSuggestion(tag.title);
                     siteTagHolder.addTag(site.sid, tag);
                 }
             }

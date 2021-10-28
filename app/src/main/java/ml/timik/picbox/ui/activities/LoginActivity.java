@@ -19,7 +19,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.Site;
 import ml.timik.picbox.helpers.MDStatusBarCompat;
@@ -65,8 +65,8 @@ public class LoginActivity extends BaseActivity {
         setReturnButton(btnReturn);
 
         //获取传递过来的Site实例
-        if (HViewerApplication.temp instanceof Site)
-            site = (Site) HViewerApplication.temp;
+        if (picboxApplication.temp instanceof Site)
+            site = (Site) picboxApplication.temp;
 
         //获取失败则结束此界面
         if (site == null || site.loginUrl == null || "".equals(site.loginUrl)) {
@@ -112,7 +112,7 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.btn_return)
     void back() {
-        HViewerApplication.temp = site;
+        picboxApplication.temp = site;
         Intent intent = new Intent();
         setResult(RESULT_OK, intent);
         onBackPressed();

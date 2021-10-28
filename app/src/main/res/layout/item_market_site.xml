@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:ellipsize="end"
+                android:textSize="@dimen/item_site_text_size"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 tools:text="E-hentai" />
             <TextView

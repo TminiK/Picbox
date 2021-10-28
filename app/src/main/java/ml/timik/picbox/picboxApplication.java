@@ -37,7 +37,7 @@ import ml.timik.picbox.dataholders.SearchSuggestionHolder;
 import ml.timik.picbox.download.DownloadService;
 import ml.timik.picbox.libraries.swipeback.common.SwipeBackApplication;
 
-public class HViewerApplication extends SwipeBackApplication {
+public class picboxApplication extends SwipeBackApplication {
     /**
      * 是否开启日志输出,在Debug状态下开启,
      * 在Release状态下关闭以提示程序性能
@@ -52,9 +52,9 @@ public class HViewerApplication extends SwipeBackApplication {
     public static SearchSuggestionHolder searchSuggestionHolder;
     public static Gson gson;
 
-    public final static String INTENT_SHORTCUT = "ml.puredark.hviewer.intent.action.SHORTCUT";
-    public final static String INTENT_FROM_DOWNLOAD = "ml.puredark.hviewer.intent.action.FROMDOWNLOAD";
-    public final static String INTENT_FROM_FAVOURITE = "ml.puredark.hviewer.intent.action.FROMFAVOURITE";
+    public final static String INTENT_SHORTCUT = "ml.timik.picbox.intent.action.SHORTCUT";
+    public final static String INTENT_FROM_DOWNLOAD = "ml.timik.picbox.intent.action.FROMDOWNLOAD";
+    public final static String INTENT_FROM_FAVOURITE = "ml.timik.picbox.intent.action.FROMFAVOURITE";
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);

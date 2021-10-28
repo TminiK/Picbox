@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 import eightbitlab.com.blurview.BlurView;
 import eightbitlab.com.blurview.RenderScriptBlur;
 import me.zhanghai.android.patternlock.PatternView;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.helpers.Logger;
 import ml.timik.picbox.helpers.MDStatusBarCompat;
@@ -41,7 +41,7 @@ import rx.Subscription;
 import zwh.com.lib.FPerException;
 import zwh.com.lib.RxFingerPrinter;
 
-import static ml.timik.picbox.HViewerApplication.mContext;
+import static ml.timik.picbox.picboxApplication.mContext;
 import static zwh.com.lib.CodeException.FINGERPRINTERS_FAILED_ERROR;
 import static zwh.com.lib.CodeException.HARDWARE_MISSIING_ERROR;
 import static zwh.com.lib.CodeException.KEYGUARDSECURE_MISSIING_ERROR;
@@ -250,9 +250,9 @@ public class LockActivity extends AppCompatActivity {
             Logger.d("ShortcutTest", "LockActivity");
             Logger.d("ShortcutTest", intent.toString());
             String action = intent.getAction();
-            if (HViewerApplication.INTENT_FROM_DOWNLOAD.equals(action)) {
+            if (picboxApplication.INTENT_FROM_DOWNLOAD.equals(action)) {
                 activityClass = DownloadActivity.class;
-            } else if (HViewerApplication.INTENT_FROM_FAVOURITE.equals(action)) {
+            } else if (picboxApplication.INTENT_FROM_FAVOURITE.equals(action)) {
                 activityClass = FavouriteActivity.class;
             } else {
                 activityClass = MainActivity.class;

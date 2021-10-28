@@ -57,7 +57,7 @@ import ml.timik.picbox.utils.DensityUtil;
 import ml.timik.picbox.utils.SharedPreferencesUtil;
 
 import static android.app.Activity.RESULT_OK;
-import static ml.timik.picbox.HViewerApplication.mContext;
+import static ml.timik.picbox.picboxApplication.mContext;
 
 /**
  * Created by PureDark on 2016/9/25.

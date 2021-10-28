@@ -22,7 +22,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.helpers.Logger;
 import ml.timik.picbox.utils.EmailUtil;
 import ml.timik.picbox.utils.SharedPreferencesUtil;
@@ -85,8 +85,8 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        if (!HViewerApplication.DEBUG) {
-                            EmailUtil.sendEmail(EmailUtil.fromEmail, "v" + HViewerApplication.getVersionName() + " " + file.getName(),
+                        if (!picboxApplication.DEBUG) {
+                            EmailUtil.sendEmail(EmailUtil.fromEmail, "v" + picboxApplication.getVersionName() + " " + file.getName(),
                                     SimpleFileUtil.readString(filePath, "utf-8"));
                         } else
                             SharedPreferencesUtil.saveData(mContext, "unupload_log", false);
@@ -112,7 +112,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
                     Thread.sleep(3000);
                 } catch (InterruptedException e) {
                 }
-                if (!HViewerApplication.DEBUG) {
+                if (!picboxApplication.DEBUG) {
                     MobclickAgent.onKillProcess(mContext);
                     android.os.Process.killProcess(android.os.Process.myPid());
                     System.exit(10);
@@ -154,7 +154,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             }
 
         }.start();
-        if (HViewerApplication.DEBUG)
+        if (picboxApplication.DEBUG)
             ex.printStackTrace();
         Logger.d("CrashHandler", "catched");
         MobclickAgent.reportError(mContext, ex);

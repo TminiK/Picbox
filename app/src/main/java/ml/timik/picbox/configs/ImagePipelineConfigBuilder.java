@@ -19,7 +19,7 @@ import com.facebook.stetho.okhttp3.StethoInterceptor;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.helpers.Logger;
 import ml.timik.picbox.http.HttpDns;
 import ml.timik.picbox.http.MyOkHttpNetworkFetcher;
@@ -56,7 +56,7 @@ public class ImagePipelineConfigBuilder {
     private static int MAX_DISK_CACHE_SIZE = 300 * ByteConstants.MB;
 
     public static ImagePipelineConfig getDefaultImagePipelineConfig(Context context) {
-        final int cacheSize = (int) SharedPreferencesUtil.getData(HViewerApplication.mContext,
+        final int cacheSize = (int) SharedPreferencesUtil.getData(picboxApplication.mContext,
                 SettingFragment.KEY_PREF_CACHE_SIZE, 300);
         MAX_DISK_CACHE_VERYLOW_SIZE = cacheSize / 5 * ByteConstants.MB;
         MAX_DISK_CACHE_LOW_SIZE = cacheSize * 3 / 5 * ByteConstants.MB;

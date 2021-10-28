@@ -29,7 +29,7 @@ import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.Video;
 import ml.timik.picbox.helpers.DynamicIjkLibLoader;
@@ -76,8 +76,8 @@ public class VideoViewerActivity extends BaseActivity {
         setDoubleBackExitEnabled(true);
 
         //获取传递过来的Video实例
-        if (HViewerApplication.temp instanceof Video)
-            video = (Video) HViewerApplication.temp;
+        if (picboxApplication.temp instanceof Video)
+            video = (Video) picboxApplication.temp;
 
         //获取失败则结束此界面
         if (video == null || TextUtils.isEmpty(video.content)) {
@@ -85,7 +85,7 @@ public class VideoViewerActivity extends BaseActivity {
             finish();
             return;
         }
-        HViewerApplication.temp = null;
+        picboxApplication.temp = null;
 
         videoPlayerType = (String) SharedPreferencesUtil.getData(this, SettingFragment.KEY_PREF_VIEW_VIDEO_PLAYER, VIDEO_IJKPLAYER);
         if (!VIDEO_IJKPLAYER.equals(videoPlayerType)

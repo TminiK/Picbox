@@ -20,7 +20,7 @@ import ml.timik.picbox.download.DownloadManager;
 import ml.timik.picbox.ui.fragments.SettingFragment;
 import ml.timik.picbox.utils.SharedPreferencesUtil;
 
-import static ml.timik.picbox.HViewerApplication.mContext;
+import static ml.timik.picbox.picboxApplication.mContext;
 
 /**
  * Created by GKF on 2016/12/1.

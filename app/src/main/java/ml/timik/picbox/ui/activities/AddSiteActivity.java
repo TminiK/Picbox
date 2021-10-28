@@ -21,7 +21,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.Site;
 import ml.timik.picbox.dataholders.SiteHolder;
@@ -139,7 +139,7 @@ public class AddSiteActivity extends BaseActivity {
         newSite.index = sid;
         siteHolder.updateSiteIndex(newSite);
 
-        HViewerApplication.temp = newSite;
+        picboxApplication.temp = newSite;
         Intent intent = new Intent();
         setResult(RESULT_OK, intent);
         finish();

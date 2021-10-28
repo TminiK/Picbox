@@ -63,7 +63,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.Collection;
 import ml.timik.picbox.beans.Picture;
@@ -144,15 +144,15 @@ public class PictureViewerActivity extends BaseActivity {
         // 关闭边缘滑动返回
         setSwipeBackEnable(false);
 
-        if (HViewerApplication.temp instanceof CollectionActivity)
-            collectionActivity = (CollectionActivity) HViewerApplication.temp;
+        if (picboxApplication.temp instanceof CollectionActivity)
+            collectionActivity = (CollectionActivity) picboxApplication.temp;
 
-        if (HViewerApplication.temp2 instanceof Site)
-            site = (Site) HViewerApplication.temp2;
-        if (HViewerApplication.temp3 instanceof Collection)
-            collection = (Collection) HViewerApplication.temp3;
-        if (HViewerApplication.temp4 instanceof List)
-            pictures = (List<Picture>) HViewerApplication.temp4;
+        if (picboxApplication.temp2 instanceof Site)
+            site = (Site) picboxApplication.temp2;
+        if (picboxApplication.temp3 instanceof Collection)
+            collection = (Collection) picboxApplication.temp3;
+        if (picboxApplication.temp4 instanceof List)
+            pictures = (List<Picture>) picboxApplication.temp4;
 
         if (site == null || collection == null || pictures == null) {
             Toast.makeText(this, "数据错误，请刷新后重试", Toast.LENGTH_SHORT).show();
@@ -161,10 +161,10 @@ public class PictureViewerActivity extends BaseActivity {
         }
         if (collectionActivity != null)
             collectionActivity.setPictureViewerActivity(this);
-        HViewerApplication.temp = null;
-        HViewerApplication.temp2 = null;
-        HViewerApplication.temp3 = null;
-        HViewerApplication.temp4 = null;
+        picboxApplication.temp = null;
+        picboxApplication.temp2 = null;
+        picboxApplication.temp3 = null;
+        picboxApplication.temp4 = null;
 
         volumeKeyEnabled = (boolean) SharedPreferencesUtil.getData(this, SettingFragment.KEY_PREF_VIEW_VOLUME_FLICK, true);
 

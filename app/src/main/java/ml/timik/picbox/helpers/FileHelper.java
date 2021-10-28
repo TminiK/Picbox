@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.utils.DocumentUtil;
 
 
@@ -24,15 +24,15 @@ import ml.timik.picbox.utils.DocumentUtil;
 public class FileHelper {
 
     public static boolean isFileExist(String fileName, String rootPath, String... subDirs) {
-        return DocumentUtil.isFileExist(HViewerApplication.mContext, fileName, rootPath, subDirs);
+        return DocumentUtil.isFileExist(picboxApplication.mContext, fileName, rootPath, subDirs);
     }
 
     public static DocumentFile getDirDocument(String rootPath, String... subDirs) {
-        return DocumentUtil.getDirDocument(HViewerApplication.mContext, rootPath, subDirs);
+        return DocumentUtil.getDirDocument(picboxApplication.mContext, rootPath, subDirs);
     }
 
     public static DocumentFile getDocumentFile(String filename, String rootPath, String... subDirs) {
-        return DocumentUtil.getDocumentFile(HViewerApplication.mContext, filename, rootPath, subDirs);
+        return DocumentUtil.getDocumentFile(picboxApplication.mContext, filename, rootPath, subDirs);
     }
 
     public static DocumentFile createFileIfNotExist(String fileName, String path, String... subDirs) {
@@ -41,33 +41,33 @@ public class FileHelper {
         Logger.d("FileHelper", Uri.decode(TextUtils.join("/", subDirs)));
         if (!path.startsWith("content://"))
             path = "file://" + Uri.decode(path);
-        return DocumentUtil.createFileIfNotExist(HViewerApplication.mContext, fileName, path, subDirs);
+        return DocumentUtil.createFileIfNotExist(picboxApplication.mContext, fileName, path, subDirs);
     }
 
     public static DocumentFile createDirIfNotExist(String path, String... subDirs) {
         if (!path.startsWith("content://"))
             path = "file://" + Uri.decode(path);
-        return DocumentUtil.createDirIfNotExist(HViewerApplication.mContext, path, subDirs);
+        return DocumentUtil.createDirIfNotExist(picboxApplication.mContext, path, subDirs);
     }
 
     public static boolean deleteFile(String fileName, String rootPath, String... subDirs) {
         if (!rootPath.startsWith("content://"))
             rootPath = "file://" + Uri.decode(rootPath);
-        return DocumentUtil.deleteFile(HViewerApplication.mContext, fileName, rootPath, subDirs);
+        return DocumentUtil.deleteFile(picboxApplication.mContext, fileName, rootPath, subDirs);
     }
 
     public static boolean writeString(String string, DocumentFile file) {
-        return DocumentUtil.writeBytes(HViewerApplication.mContext, string.getBytes(), file);
+        return DocumentUtil.writeBytes(picboxApplication.mContext, string.getBytes(), file);
     }
 
     public static boolean writeString(String string, String fileName, String rootPath, String... subDirs) {
         if (!rootPath.startsWith("content://"))
             rootPath = "file://" + Uri.decode(rootPath);
-        return DocumentUtil.writeBytes(HViewerApplication.mContext, string.getBytes(), fileName, rootPath, subDirs);
+        return DocumentUtil.writeBytes(picboxApplication.mContext, string.getBytes(), fileName, rootPath, subDirs);
     }
 
     public static String readString(String fileName, String rootPath, String... subDirs) {
-        byte[] data = DocumentUtil.readBytes(HViewerApplication.mContext, fileName, rootPath, subDirs);
+        byte[] data = DocumentUtil.readBytes(picboxApplication.mContext, fileName, rootPath, subDirs);
         String string = null;
         try {
             string = new String(data, "utf-8");
@@ -78,7 +78,7 @@ public class FileHelper {
     }
 
     public static String readString(DocumentFile file) {
-        byte[] data = DocumentUtil.readBytes(HViewerApplication.mContext, file);
+        byte[] data = DocumentUtil.readBytes(picboxApplication.mContext, file);
         String string = null;
         try {
             string = new String(data, "utf-8");
@@ -91,20 +91,20 @@ public class FileHelper {
     public static boolean writeBytes(byte[] data, String fileName, String rootPath, String... subDirs) {
         if (!rootPath.startsWith("content://"))
             rootPath = "file://" + Uri.decode(rootPath);
-        return DocumentUtil.writeBytes(HViewerApplication.mContext, data, fileName, rootPath, subDirs);
+        return DocumentUtil.writeBytes(picboxApplication.mContext, data, fileName, rootPath, subDirs);
     }
 
     public static boolean writeBytes(byte[] data, DocumentFile file) {
         if (file == null)
             return false;
-        return DocumentUtil.writeBytes(HViewerApplication.mContext, data, file);
+        return DocumentUtil.writeBytes(picboxApplication.mContext, data, file);
     }
 
     public static boolean writeFromFile(File fromFile, DocumentFile file) {
         if (file == null)
             return false;
         try {
-            return DocumentUtil.writeFromInputStream(HViewerApplication.mContext, new FileInputStream(fromFile), file);
+            return DocumentUtil.writeFromInputStream(picboxApplication.mContext, new FileInputStream(fromFile), file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             return false;
@@ -114,7 +114,7 @@ public class FileHelper {
     public static boolean writeFromInputStream(InputStream inStream, DocumentFile file) {
         if (file == null)
             return false;
-        return DocumentUtil.writeFromInputStream(HViewerApplication.mContext, inStream, file);
+        return DocumentUtil.writeFromInputStream(picboxApplication.mContext, inStream, file);
     }
 
     public static void saveBitmapToFile(Bitmap bitmap, DocumentFile file) throws IOException {
@@ -122,7 +122,7 @@ public class FileHelper {
     }
 
     public static void saveBitmapToFile(Bitmap bitmap, Uri fileUri) throws IOException {
-        OutputStream out = HViewerApplication.mContext.getContentResolver().openOutputStream(fileUri);
+        OutputStream out = picboxApplication.mContext.getContentResolver().openOutputStream(fileUri);
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
         out.flush();
         out.close();
@@ -131,13 +131,13 @@ public class FileHelper {
     public static OutputStream getFileOutputSteam(String fileName, String rootPath, String... subDirs) {
         if (!rootPath.startsWith("content://"))
             rootPath = "file://" + Uri.decode(rootPath);
-        return DocumentUtil.getFileOutputSteam(HViewerApplication.mContext, fileName, rootPath, subDirs);
+        return DocumentUtil.getFileOutputSteam(picboxApplication.mContext, fileName, rootPath, subDirs);
     }
 
     public static InputStream getFileInputSteam(String fileName, String rootPath, String... subDirs) {
         if (!rootPath.startsWith("content://"))
             rootPath = "file://" + Uri.decode(rootPath);
-        return DocumentUtil.getFileInputSteam(HViewerApplication.mContext, fileName, rootPath, subDirs);
+        return DocumentUtil.getFileInputSteam(picboxApplication.mContext, fileName, rootPath, subDirs);
     }
 
     public static String filenameFilter(String str) {

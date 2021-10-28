@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.beans.Site;
 import ml.timik.picbox.helpers.Logger;
 import okhttp3.Call;
@@ -98,7 +98,7 @@ public class HViewerHttpClient {
             Logger.d("HViewerHttpClient", "url = " + url);
             return null;
         }
-        if (HViewerApplication.isNetworkAvailable()) {
+        if (picboxApplication.isNetworkAvailable()) {
             HRequestBuilder builder = new HRequestBuilder();
             if (headers != null) {
                 for (Pair<String, String> header : headers) {
@@ -155,7 +155,7 @@ public class HViewerHttpClient {
             callback.onFailure(new HttpError(HttpError.ERROR_WRONG_URL));
             return;
         }
-        if (HViewerApplication.isNetworkAvailable()) {
+        if (picboxApplication.isNetworkAvailable()) {
             try {
                 HRequestBuilder builder = new HRequestBuilder(disableHProxy);
                 if (headers != null) {

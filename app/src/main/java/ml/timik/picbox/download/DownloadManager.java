@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.beans.CollectionGroup;
 import ml.timik.picbox.beans.DownloadTask;
 import ml.timik.picbox.beans.LocalCollection;
@@ -70,7 +70,7 @@ public class DownloadManager {
     }
 
     public static String getDownloadPath() {
-        String downloadPath = (String) SharedPreferencesUtil.getData(HViewerApplication.mContext, SettingFragment.KEY_PREF_DOWNLOAD_PATH, DEFAULT_PATH);
+        String downloadPath = (String) SharedPreferencesUtil.getData(picboxApplication.mContext, SettingFragment.KEY_PREF_DOWNLOAD_PATH, DEFAULT_PATH);
         if (downloadPath == null)
             return DEFAULT_PATH;
         else
@@ -105,7 +105,7 @@ public class DownloadManager {
     }
 
     private synchronized void checkNoMediaFile() {
-        boolean nomedia = (boolean) SharedPreferencesUtil.getData(HViewerApplication.mContext, SettingFragment.KEY_PREF_DOWNLOAD_NOMEDIA, true);
+        boolean nomedia = (boolean) SharedPreferencesUtil.getData(picboxApplication.mContext, SettingFragment.KEY_PREF_DOWNLOAD_NOMEDIA, true);
         String path = Uri.decode(getDownloadPath());
         if (nomedia) {
             try {
@@ -163,7 +163,7 @@ public class DownloadManager {
         holder.addDownloadTask(task);
         downloadingTasks.add(task);
         // 统计添加下载次数
-        MobclickAgent.onEvent(HViewerApplication.mContext, "DownloadTaskCreated");
+        MobclickAgent.onEvent(picboxApplication.mContext, "DownloadTaskCreated");
         if (!isDownloading())
             startDownload(task);
         return true;

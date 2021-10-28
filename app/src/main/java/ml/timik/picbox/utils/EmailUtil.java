@@ -5,7 +5,7 @@ import android.util.Log;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 
-import static ml.timik.picbox.HViewerApplication.mContext;
+import static ml.timik.picbox.picboxApplication.mContext;
 
 /**
  * Created by PureDark on 2016/8/26.

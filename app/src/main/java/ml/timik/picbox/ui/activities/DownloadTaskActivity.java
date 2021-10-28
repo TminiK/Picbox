@@ -35,7 +35,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.Comment;
 import ml.timik.picbox.beans.DownloadTask;
@@ -115,8 +115,8 @@ public class DownloadTaskActivity extends BaseActivity {
         setFabMenu(fabMenu);
 
         //获取传递过来的Collection实例
-        if (HViewerApplication.temp instanceof DownloadTask)
-            task = (DownloadTask) HViewerApplication.temp;
+        if (picboxApplication.temp instanceof DownloadTask)
+            task = (DownloadTask) picboxApplication.temp;
 
         //获取失败则结束此界面
         if (task == null || task.collection == null) {
@@ -251,10 +251,10 @@ public class DownloadTaskActivity extends BaseActivity {
     }
 
     private void openPictureViewerActivity(int position) {
-        HViewerApplication.temp = this;
-        HViewerApplication.temp2 = task.collection.site;
-        HViewerApplication.temp3 = task.collection;
-        HViewerApplication.temp4 = task.collection.pictures;
+        picboxApplication.temp = this;
+        picboxApplication.temp2 = task.collection.site;
+        picboxApplication.temp3 = task.collection;
+        picboxApplication.temp4 = task.collection.pictures;
         Intent intent = new Intent(this, PictureViewerActivity.class);
         intent.putExtra("position", position);
         startActivity(intent);
@@ -339,7 +339,7 @@ public class DownloadTaskActivity extends BaseActivity {
             showSnackBar("没有可调用的浏览器，网址已复制到剪贴板");
         }
         // 统计打开浏览器访问次数
-        MobclickAgent.onEvent(HViewerApplication.mContext, "SwitchToBrowser");
+        MobclickAgent.onEvent(picboxApplication.mContext, "SwitchToBrowser");
     }
 
     @OnClick(R.id.fab_favor)
@@ -352,7 +352,7 @@ public class DownloadTaskActivity extends BaseActivity {
             showSnackBar("图册已收藏！");
         }
         // 统计收藏次数
-        MobclickAgent.onEvent(HViewerApplication.mContext, "FavorCollection");
+        MobclickAgent.onEvent(picboxApplication.mContext, "FavorCollection");
     }
 
     @Override

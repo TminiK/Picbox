@@ -1,6 +1,6 @@
 package ml.timik.picbox.http;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.ui.fragments.SettingFragment;
 import ml.timik.picbox.utils.SharedPreferencesUtil;
 
@@ -26,23 +26,23 @@ public class HProxy {
     }
 
     public static boolean isEnabled() {
-        return (boolean) SharedPreferencesUtil.getData(HViewerApplication.mContext,
+        return (boolean) SharedPreferencesUtil.getData(picboxApplication.mContext,
                 SettingFragment.KEY_PREF_PROXY_ENABLED, false);
     }
 
     public static boolean isAllowRequest() {
-        return (boolean) SharedPreferencesUtil.getData(HViewerApplication.mContext,
+        return (boolean) SharedPreferencesUtil.getData(picboxApplication.mContext,
                 SettingFragment.KEY_PREF_PROXY_REQUEST, false);
     }
 
     public static boolean isAllowPicture() {
-        return (boolean) SharedPreferencesUtil.getData(HViewerApplication.mContext,
+        return (boolean) SharedPreferencesUtil.getData(picboxApplication.mContext,
                 SettingFragment.KEY_PREF_PROXY_PICTURE, false);
     }
 
     private static String getProxyServer() {
 //        return PROXY_DEFAULT_SERVER;
-        String proxy = (String) SharedPreferencesUtil.getData(HViewerApplication.mContext,
+        String proxy = (String) SharedPreferencesUtil.getData(picboxApplication.mContext,
                 SettingFragment.KEY_PREF_PROXY_SERVER, "");
         if (proxy.startsWith("http://") || proxy.startsWith("https://"))
             return proxy;

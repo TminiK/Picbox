@@ -45,7 +45,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.beans.Collection;
 import ml.timik.picbox.beans.Comment;
@@ -162,10 +162,10 @@ public class CollectionActivity extends BaseActivity implements AppBarLayout.OnO
         setFabMenu(fabMenu);
 
         //获取传递过来的Collection实例
-        if (HViewerApplication.temp instanceof Site)
-            site = (Site) HViewerApplication.temp;
-        if (HViewerApplication.temp2 instanceof Collection)
-            collection = (Collection) HViewerApplication.temp2;
+        if (picboxApplication.temp instanceof Site)
+            site = (Site) picboxApplication.temp;
+        if (picboxApplication.temp2 instanceof Collection)
+            collection = (Collection) picboxApplication.temp2;
 
         //获取失败则结束此界面
         if (site == null || collection == null) {
@@ -352,19 +352,19 @@ public class CollectionActivity extends BaseActivity implements AppBarLayout.OnO
     }
 
     private void openPictureViewerActivity(int position) {
-        HViewerApplication.temp = this;
-        HViewerApplication.temp2 = site;
-        HViewerApplication.temp3 = collection;
+        picboxApplication.temp = this;
+        picboxApplication.temp2 = site;
+        picboxApplication.temp3 = collection;
         List<Picture> pictures = new ArrayList<>();
         pictures.addAll(pictureVideoAdapter.getPictureDataProvider().getItems());
-        HViewerApplication.temp4 = pictures;
+        picboxApplication.temp4 = pictures;
         Intent intent = new Intent(this, PictureViewerActivity.class);
         intent.putExtra("position", position);
         startActivity(intent);
     }
 
     private void openVideoViewerActivity(int position) {
-        HViewerApplication.temp = pictureVideoAdapter.getVideoDataProvider().getItem(position - pictureVideoAdapter.getPictureSize());
+        picboxApplication.temp = pictureVideoAdapter.getVideoDataProvider().getItem(position - pictureVideoAdapter.getPictureSize());
         Intent intent = new Intent(this, VideoViewerActivity.class);
         startActivity(intent);
     }
@@ -501,7 +501,7 @@ public class CollectionActivity extends BaseActivity implements AppBarLayout.OnO
         new Handler(Looper.getMainLooper()).post(() -> {
             boolean flagNextPage = false, emptyPicture = false, emptyVideo = false;
 
-            if (HViewerApplication.DEBUG)
+            if (picboxApplication.DEBUG)
                 SimpleFileUtil.writeString("/sdcard/html.txt", html, "utf-8");
             Rule applyRule = (currGalleryUrl != null && currGalleryUrl.equals(site.galleryUrl)) ? site.galleryRule : site.extraRule;
             Logger.d("CollectionActivity", "applyRule:"+(applyRule.equals(site.galleryRule) ? "galleryRule" : "extraRule"));
@@ -517,7 +517,7 @@ public class CollectionActivity extends BaseActivity implements AppBarLayout.OnO
 
             if (myCollection.tags != null) {
                 for (Tag tag : myCollection.tags) {
-                    HViewerApplication.searchSuggestionHolder.addSearchSuggestion(tag.title);
+                    picboxApplication.searchSuggestionHolder.addSearchSuggestion(tag.title);
                     siteTagHolder.addTag(site.sid, tag);
                 }
             }
@@ -686,7 +686,7 @@ public class CollectionActivity extends BaseActivity implements AppBarLayout.OnO
                 showSnackBar("没有可调用的浏览器，网址已复制到剪贴板");
             }
             // 统计打开浏览器访问次数
-            MobclickAgent.onEvent(HViewerApplication.mContext, "SwitchToBrowser");
+            MobclickAgent.onEvent(picboxApplication.mContext, "SwitchToBrowser");
         } else {
             showSnackBar("网址为空！");
         }
@@ -703,7 +703,7 @@ public class CollectionActivity extends BaseActivity implements AppBarLayout.OnO
             showSnackBar("图册已收藏！");
         }
         // 统计收藏次数
-        MobclickAgent.onEvent(HViewerApplication.mContext, "FavorCollection");
+        MobclickAgent.onEvent(picboxApplication.mContext, "FavorCollection");
     }
 
     @OnClick(R.id.fab_download)

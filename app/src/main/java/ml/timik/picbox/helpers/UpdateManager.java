@@ -21,7 +21,7 @@ import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.R;
 import ml.timik.picbox.configs.ImagePipelineConfigBuilder;
 import ml.timik.picbox.configs.UrlConfig;
@@ -64,7 +64,7 @@ public class UpdateManager {
                         return;
                     JsonArray assets = version.get("assets").getAsJsonArray();
                     if (assets.size() > 0) {
-                        String oldVersion = HViewerApplication.getVersionName();
+                        String oldVersion = picboxApplication.getVersionName();
                         String newVersion = version.get("tag_name").getAsString().substring(1);
                         String url = assets.get(0).getAsJsonObject().get("browser_download_url").getAsString();
                         String detail = version.get("body").getAsString();

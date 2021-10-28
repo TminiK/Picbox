@@ -12,7 +12,7 @@ import com.facebook.imagepipeline.datasource.BaseBitmapDataSubscriber;
 
 import java.util.List;
 
-import ml.timik.picbox.HViewerApplication;
+import ml.timik.picbox.picboxApplication;
 import ml.timik.picbox.beans.Collection;
 import ml.timik.picbox.beans.Picture;
 import ml.timik.picbox.beans.Site;
@@ -102,7 +102,7 @@ public class SiteFlagHandler {
                     synchronized (context) {
                         if (collection.tags != null) {
                             for (Tag tag : collection.tags) {
-                                HViewerApplication.searchSuggestionHolder.addSearchSuggestion(tag.title);
+                                picboxApplication.searchSuggestionHolder.addSearchSuggestion(tag.title);
                                 if (siteTagHolder != null)
                                     siteTagHolder.addTag(site.sid, tag);
                             }
