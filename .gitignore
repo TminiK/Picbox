@@ -46,3 +46,5 @@ Thumbs.db
 /images/icons
 /gradle.properties
 /.idea
+*.apk
+*.apk
