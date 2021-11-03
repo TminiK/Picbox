@@ -23,7 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:contentScrim="@color/colorPrimaryDark"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:titleEnabled="false">
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/backdrop"
@@ -38,6 +39,14 @@
                 fresco:placeholderImageScaleType="centerCrop"
                 fresco:failureImage="@drawable/backdrop"
                 fresco:failureImageScaleType="centerCrop"/>
+            <View
+                android:id="@+id/hover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@color/colorPrimaryDark"
+                android:fitsSystemWindows="true"
+                android:scaleType="fitXY" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

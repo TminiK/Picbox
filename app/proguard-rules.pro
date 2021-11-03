@@ -64,6 +64,8 @@
 
 -dontwarn okhttp3.**
 
+-dontwarn android.support.**
+
 -keepclassmembers class * {
    public <init>(org.json.JSONObject);
     @android.webkit.JavascriptInterface <methods>;
@@ -73,7 +75,7 @@
     public static final int *;
 }
 
--keep public class com.umeng.fb.ui.ThreadView {
+-keep public class com.umeng.** {
 }
 
 -keep public class * extends com.umeng.**
@@ -94,10 +96,7 @@
   *;
 }
 
--keep class * implements com.google.gson.TypeAdapterFactory
--keep class * implements com.google.gson.JsonSerializer
--keep class * implements com.google.gson.JsonDeserializer
--keep class * implements com.google.gson.GsonBuilder
+-keep class * implements com.google.gson.**
 
 -keep public class org.jsoup.** {
     public *;
