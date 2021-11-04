@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             app:contentScrim="@color/colorPrimaryDark"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            app:titleEnabled="false">
+            app:titleEnabled="true">
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/backdrop"

@@ -48,3 +48,6 @@ Thumbs.db
 /.idea
 *.apk
 *.apk
+*.apk
+app/github/release/output.json
+app/github/release/app-github-release.apk
